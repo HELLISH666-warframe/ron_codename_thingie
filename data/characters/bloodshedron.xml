@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-character>
+<character x="-800" y="-300" icon="hellron" camx="-317" camy="179" isPlayer="false" flipX="false" holdTime="4" sprite="bloodshedron" scale="0.5"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="idle" anim="bloodshedron idle" fps="16" loop="true" x="0" y="0"/>
+   <anim name="singLEFT" anim="bloodshedron left" fps="8" loop="false" x="0" y="0"/>
+   <anim name="singDOWN" anim="bloodshedron down" loop="false" x="0" y="0"/>
+   <anim name="singUP" anim="bloodshedron up" loop="false" x="0" y="0"/>
+   <anim name="singRIGHT" anim="bloodshedron right" loop="false" x="0" y="0"/>
+
+</character>

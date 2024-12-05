@@ -1,0 +1,7 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.7" name="obama" folder="stages/obama/" >
+	<sprite name="bg"         scale="4"      x="100" y="300"   sprite="whitehouse"       scroll="0.9" />
+	<girlfriend />
+	<dad />
+	<boyfriend />	
+</stage>

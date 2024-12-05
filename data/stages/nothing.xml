@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.5" folder="stages/nothing/">
+	<solid name="nothing" y="50" x="-400" width="2200" height="1000"/>
+	<girlfriend />
+	<dad />
+	<boyfriend />	
+	<sprite name="trans"    x="-500"   y="-430" scale="1"   sprite="ss_gradient" scroll="1" />
+</stage>

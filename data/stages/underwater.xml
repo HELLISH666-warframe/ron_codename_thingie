@@ -1,0 +1,7 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="1" name="underwater"folder="stages/pissedStreet">
+   	<sprite name="underwater" x="20" y="300" sprite="underwater" scroll="0.7" scale="4" />
+   	<girlfriend />
+   	<dad />
+   	<boyfriend />
+</stage>

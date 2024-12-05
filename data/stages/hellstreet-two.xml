@@ -1,0 +1,14 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.2" name="hellstreet-two" folder="stages/hell">
+    <girlfriend />
+    <sprite name="escape_fire" x="300" y="300" sprite="escape_fire" scroll="1" type="loop"   scale="4"   >
+         <anim name="escape_fire" anim="fire instance " loop="true"/>
+</sprite>
+    <sprite name="lava" x="300" y="300" sprite="lava" scroll="1" type="loop"   scale="2"   >
+         <anim name="lava" anim="lava" loop="true"/>
+         </sprite>
+         <sprite name="bloodshed_lamp"  x="900" y="-50"   sprite="bloodshed_lamp"    scroll="1"  scale="1"   >
+         </sprite>
+          <sprite name="bloodshed_streetBroken" x="-800" y="-340"   sprite="bloodshed_streetBroken"    scroll="1"  scale="0.7"   >
+        </sprite>
+</stage>

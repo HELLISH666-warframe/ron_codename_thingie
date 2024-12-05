@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="1" folder="stages/hell">
+	<girlfriend />
+   	<sprite name="spacebg" x="-800" y="-400" sprite="spacebg" scroll="0.5" />
+   	<sprite name="space" x="-800" y="-800" sprite="space" scroll="0.5" />
+   	<sprite name="bloodshed_streetBroken" x="-800" y="-340"   sprite="bloodshed_streetBroken"    scroll="1"  scale="0.7"   />
+   	<dad />
+   	<boyfriend />
+   	<sprite name="freindlystars" x="-800" y="-400" sprite="freindlystars" />
+</stage>

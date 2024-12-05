@@ -1,0 +1,14 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="BFm" icon="bf" color="#0079fd" y="350" flipX="true" antialiasing="false" camx="160" camy="50" scale="10">
+	<anim name="idle" anim="idle" x="-19.1" y="-18" fps="10"/>
+	<anim name="singLEFT" anim="left" x="-19.1" y="-18" fps="15"/>
+	<anim name="singDOWN" anim="down" x="-19.1" y="-18" fps="15"/>
+	<anim name="singRIGHT" anim="right" x="-19.1" y="-18" fps="15"/>
+	<anim name="singUP" anim="up" x="-19.1" y="-18" fps="15"/>
+	<anim name="singLEFTmiss" anim="missleft" x="-19.1" y="-18" fps="15" indices="0,0,0,0,0"/>
+	<anim name="singDOWNmiss" anim="missdown" x="-19.1" y="-18" fps="15" indices="0,0,0,0,0"/>
+	<anim name="singRIGHTmiss" anim="missright" x="-19.1" y="-18" fps="15" indices="0,0,0,0,0"/>
+	<anim name="hey" anim="hey" x="-19.1" y="-18" fps="15"/>
+	<anim name="singUPmiss" anim="missup" x="-19.1" y="-18" fps="15"/>
+</character>

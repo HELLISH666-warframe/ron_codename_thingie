@@ -1,0 +1,20 @@
+[
+    {
+        "iCard": "ron",
+        "songs": ["ron", "wastted", "ayo", "bloodshed", "trojan-virus"],
+        "locked": false,
+        "comingSoon": false
+    },
+    {
+        "iCard": "evilron",
+        "songs": ["ron-classic"],
+        "locked": false,
+        "comingSoon": false
+    },
+    {
+        "iCard": "doyne",
+        "songs": ["bloodbath"],
+        "locked": false,
+        "comingSoon": false
+    }
+]
