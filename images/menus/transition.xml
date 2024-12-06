@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="transition.png" width="9611" height="720">
+	<SubTexture name="transition wipe0000" x="9610" y="0" width="1" height="1" frameX="-0" frameY="-0" frameWidth="960" frameHeight="720"/>
+	<SubTexture name="transition wipe0001" x="0" y="0" width="960" height="720" frameX="-0" frameY="-0" frameWidth="960" frameHeight="720"/>
+	<SubTexture name="transition wipe0002" x="961" y="0" width="960" height="720" frameX="-0" frameY="-0" frameWidth="960" frameHeight="720"/>
+	<SubTexture name="transition wipe0003" x="1922" y="0" width="960" height="720" frameX="-0" frameY="-0" frameWidth="960" frameHeight="720"/>
+	<SubTexture name="transition wipe0004" x="2883" y="0" width="960" height="720" frameX="-0" frameY="-0" frameWidth="960" frameHeight="720"/>
+	<SubTexture name="transition wipe0005" x="3844" y="0" width="960" height="720" frameX="-0" frameY="-0" frameWidth="960" frameHeight="720"/>
+	<SubTexture name="transition wipe0006" x="4805" y="0" width="960" height="720" frameX="-0" frameY="-0" frameWidth="960" frameHeight="720"/>
+	<SubTexture name="transition wipe0007" x="5766" y="0" width="960" height="720" frameX="-0" frameY="-0" frameWidth="960" frameHeight="720"/>
+	<SubTexture name="transition wipe0008" x="6727" y="0" width="960" height="720" frameX="-0" frameY="-0" frameWidth="960" frameHeight="720"/>
+	<SubTexture name="transition wipe0009" x="7688" y="0" width="960" height="720" frameX="-0" frameY="-0" frameWidth="960" frameHeight="720"/>
+	<SubTexture name="transition wipe0010" x="8649" y="0" width="960" height="720" frameX="-0" frameY="-0" frameWidth="960" frameHeight="720"/>
+</TextureAtlas>
