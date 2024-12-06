@@ -1,0 +1,8 @@
+{
+	"displayName": "Bloodshed",
+	"bpm": 185.0,
+	"icon": "hellron",
+	"color": "#000000",
+	"coopAllowed": true,
+	"opponentModeAllowed": true
+}

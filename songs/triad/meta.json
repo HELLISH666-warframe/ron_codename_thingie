@@ -1,0 +1,8 @@
+{
+    "displayName": "Triad",
+    "bpm": 150.0,
+    "icon": "majin",
+    "color": "#9271FD",
+    "coopAllowed": true,
+    "opponentModeAllowed": true
+}
