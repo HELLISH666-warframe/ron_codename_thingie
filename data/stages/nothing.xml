@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-stage>
-<stage zoom="0.5" folder="stages/nothing/">
+<stage zoom="0.8" folder="stages/nothing/">
 	<solid name="nothing" y="50" x="-400" width="2200" height="1000"/>
 	<girlfriend />
 	<dad />
