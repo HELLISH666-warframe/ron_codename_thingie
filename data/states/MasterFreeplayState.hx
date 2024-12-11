@@ -147,9 +147,7 @@ FlxG.camera.addShader(crt);
 
 		if(controls.ACCEPT)
 		{
-			FlxG.sound.play(Paths.sound('confirmMenu'));
-
-			FlxG.switchState(new FreeplayState());
+			FlxG.resetState();
 		}
 		if(controls.DOWN_P)
 		{

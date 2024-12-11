@@ -6,6 +6,6 @@
 	<sprite name="ice"               x="-600" y="-900"   sprite="ss_iciclesbehind"       scroll="0.9" />
 	<sprite name="ice_front"               x="-600" y="-900"   sprite="ss_iciclesnbulb"       scroll="0.9" />
 	<sprite name="diam"               x="-700" y="-500"   sprite="ss_diamond"       scroll="0.9" />
-	<sprite name="penta"               x="1" y="-400"   sprite="ss_pentagram"       scroll="0.9" />
+	<sprite name="satan"               x="1" y="-400"   sprite="ss_pentagram"       scroll="0.9" />
 	<sprite name="GROUND"               x="-650" y="-400"   sprite="ss_ground"       scroll="1" />
 </stage>

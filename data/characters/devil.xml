@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="devilron" icon="hellron" color="#ab35eb" y="350"  camx="-200">
+	<anim name="idle" anim="idle" x="-5" y="0"/>
+	<anim name="singLEFT" anim="left" x="-0" y="-3"/>
+	<anim name="singDOWN" anim="down" x="-3" y="-31"/>
+	<anim name="singUP" anim="up" x="-3" y="67"/>
+	<anim name="singRIGHT" anim="right" x="30" y="-7"/>
+</character>

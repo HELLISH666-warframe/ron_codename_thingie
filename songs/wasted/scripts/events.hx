@@ -1,7 +1,12 @@
 var fog:FlxSprite;
 var truefog:FlxSprite;
-var fiss = new CustomShader('godray');
+var time:Float = 0;
+var iTime:Float = 0;
+var ray = new CustomShader('godray');
 var crt = new CustomShader('fake CRT');
+var wig:CustomShader  = new CustomShader("glitchsmh");
+var chrom:CustomShader  = new CustomShader("chromatic aberration");
+
 function postCreate() {
 	fog = new FlxSprite().loadGraphic(Paths.image('stages/pissedStreet/fog'));
 	fog.scale.set(2, 2);
@@ -14,34 +19,38 @@ function postCreate() {
 	truefog.scrollFactor.set(0.8, 0.8);
 	insert(members.indexOf(stage.getSprite("mountains")), truefog);
 	truefog.visible = false;
+}override function update(elapsed:Float){time += elapsed;
+	chrom.data.rOffset.value = [0.005*Math.sin(time)];
+	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
+	wig.data.iTime.value = [0.005*Math.sin(time)];
 }
 function beatHit(curBeat) {
 	if ((curBeat >= 129) && (curBeat < 233))
-	{
-		for (i in 0...4)
-		{ 
-			for (guh in [playerStrums, cpuStrums])
-			{
-				var member = guh.members[i];
-								
-				if (curBeat % 2 == 0)
+		{
+			for (i in 0...4)
+			{ 
+				for (guh in [playerStrums, cpuStrums])
 				{
-					var angler = (i%2 ? 10 : -10) * ((curBeat%4==2) ? -1 : 1);
-
-					FlxTween.tween(member, {angle: angler, y: member.y + (PlayState.downscroll ? 10 : -10)}, 0.125, {
-							ease: FlxEase.quartIn,
-							onComplete: function(twn:FlxTween)
-							{
-								FlxTween.tween(member, {angle: 0, y: member.y - (PlayState.downscroll ? 10 : -10)}, 0.33, {ease: FlxEase.circInOut});
-							}
-						});
+					var member = guh.members[i];
+									
+					if (curBeat % 2 == 0)
+					{
+						var angler = (i%2 ? 10 : -10) * ((curBeat%4==2) ? -1 : 1);
+	
+						FlxTween.tween(member, {angle: angler, y: member.y + (PlayState.downscroll ? 10 : -10)}, 0.125, {
+								ease: FlxEase.quartIn,
+								onComplete: function(twn:FlxTween)
+								{
+									FlxTween.tween(member, {angle: 0, y: member.y - (PlayState.downscroll ? 10 : -10)}, 0.33, {ease: FlxEase.circInOut});
+								}
+							});
+					}
 				}
 			}
 		}
-	}
 	switch(curBeat) {
-		case 124: 
-			var it = 0; for (i in stage.stageSprites) {
+		case 123: 
+			var it = 1; for (i in stage.stageSprites) {
 				FlxTween.color(i, (Conductor.crochet/1000) * 4.5,0xFFFFFFFF, 0xFF000000);
 			}
 			FlxTween.cancelTweensOf(FlxG.camera, ['zoom']);
@@ -79,11 +88,19 @@ function beatHit(curBeat) {
 			stage.getSprite("hillfront").alpha = 
 			stage.getSprite("mountains").alpha = 
 			gf.alpha = 1;
-	case 393:
-		camGame.addShader(fish);
-			case 484:
-		camGame.removeShader(fish);
-			case 529:
-		camGame.addShader(crt);
+	case 445:
+		camGame.addShader(ray);
+			case 552:
+		camGame.removeShader(ray);
+			case 599:
+				FlxG.camera.addShader(wig);
+				camHUD.addShader(wig);
+				wig.data.iTime.value = [2,2];
+				wig.data.on.value = [1.];
+				FlxG.camera.addShader(chrom);
+				camHUD.addShader(chrom);
+				chrom.data.rOffset.value = [1/2];
+				chrom.data.gOffset.value = [0.0];
+				chrom.data.bOffset.value = [1 * -1];
 	}
 }

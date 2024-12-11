@@ -5,7 +5,6 @@ var restartSpr:FlxSprite;
 var controlsSpr:FlxSprite;
 var optionsSpr:FlxSprite;
 var exitToMenu:FlxSprite;
-
 function postCreate(){
     for (i=>sprite in members)
         sprite.visible = sprite.active = false;
@@ -55,9 +54,6 @@ function postCreate(){
                 exitToMenu = yeye;
         }
     }
-
-
-
 
     var levelInfo:FlxText = new FlxText(40, 15, 0, PlayState.SONG.meta.displayName, 32);
 	var multiplayerText:FlxText = new FlxText(20, 15, 0, PlayState.opponentMode ? 'OPPONENT MODE' : (PlayState.coopMode ? 'CO-OP MODE' : ''), 32);

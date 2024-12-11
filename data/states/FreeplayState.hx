@@ -1,60 +1,42 @@
-import flixel.addons.display.FlxGridOverlay;
-import flixel.group.FlxGroup.FlxTypedGroup;
-import flixel.math.FlxMath;
-import flixel.util.FlxColor;
-import flixel.FlxCamera;
-import flixel.text.FlxText;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
-import flixel.graphics.FlxGraphic;
-import flixel.effects.particles.FlxParticle;
-import flixel.effects.particles.FlxTypedEmitter;
-import flixel.text.FlxTextAlign;
-import lime.utils.Assets;
-import openfl.utils.Assets as OpenFlAssets;
-var time:Float = 0;
-var camText:FlxCamera = new FlxCamera();
+//import
+ import flixel.util.FlxColor;
+ import flixel.text.FlxText;
+ import flixel.graphics.FlxGraphic;
+ import flixel.effects.particles.FlxParticle;
+ import flixel.effects.particles.FlxTypedEmitter;
+ import flixel.text.FlxTextAlign;
+
+//shaders
+ var time:Float = 0;
  var crt:CustomShader  = new CustomShader("fake CRT");
- var vhs:CustomShader  = new CustomShader("chromatic aberration");
+ var chrom:CustomShader  = new CustomShader("chromatic aberration");
  var fish:CustomShader  = new CustomShader("fisheye1");
- 
-
- public static var mode:String = 'main';
-
-public var interpColor:FlxInterpolateColor;
-
+ //shader shit//
+//cam
+ var camWhat:FlxCamera;
+ var camText:FlxCamera = new FlxCamera();
+ camText.bgColor = null;
+ camWhat = new FlxCamera();
+ FlxG.cameras.reset(camWhat);
+ FlxG.cameras.add(camText);
+ FlxCamera.defaultCameras = [camWhat];
+ //cam shit//	
 var portrait:FlxSprite;
-	var camWhat:FlxCamera;
 var preload = [];
 var particles:FlxTypedEmitter;
-
-camText.bgColor = 0;
-		camWhat = new FlxCamera();
-		FlxG.cameras.reset(camWhat);
-		FlxG.cameras.add(camText);
-		FlxCamera.defaultCameras = [camWhat];
-		
-		override function create(){
-		public static var mode:String = 'main';
-		override function create(){for (i in 0...WeekData.weeksList.length) {
-			if(weekIsLocked(WeekData.weeksList[i])) continue;
-
-			if (mode == 'main' && WeekData[i] != 'mainweek' && WeekData.weeksList[i] != 'week2') continue;
-			else if (mode == 'extras' && WeekData[i] != 'freeplayshit') continue;
-			else if (mode == 'classic' && WeekData[i] != 'classic') continue;}}}
-			override function update(elapsed:Float){time += elapsed;
-				vhs.data.rOffset.value = [0.005*Math.sin(time)];
-				vhs.data.bOffset.value = [-0.005*Math.sin(time)];}
+var intendedColor:Int;
+override function update(elapsed:Float){time += elapsed;
+	chrom.data.rOffset.value = [0.005*Math.sin(time)];
+	chrom.data.bOffset.value = [-0.005*Math.sin(time)];}
 function postCreate() {
 	FlxG.cameras.add(camText, false);
 	grpSongs.camera = camText;
 	for (i in iconArray) i.camera = camText;
 
-	{var bg:FlxSprite = CoolUtil.loadAnimatedGraphic(new FlxSprite(), Paths.image('menus/freeplay/mainbgAnimate'));
+	var bg:FlxSprite = CoolUtil.loadAnimatedGraphic(new FlxSprite(), Paths.image('menus/freeplay/mainbgAnimate'));
 	add(bg);
 	bg.screenCenter();
 	bg.scale.set(2,2);
-	}
 
 	portrait = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/portraits/ron'));
 	portrait.scale.set(0.51,0.51);
@@ -72,11 +54,11 @@ function postCreate() {
 	}
 	changeSelection(0, true);{
 	   FlxG.camera.addShader(crt);
-	   FlxG.camera.addShader(vhs);
-	   camText.addShader(vhs);
-	   vhs.data.rOffset.value = [1/2];
-	   vhs.data.gOffset.value = [0.0];
-	   vhs.data.bOffset.value = [1 * -1];
+	   FlxG.camera.addShader(chrom);
+	   camText.addShader(chrom);
+	   chrom.data.rOffset.value = [1/2];
+	   chrom.data.gOffset.value = [0.0];
+	   chrom.data.bOffset.value = [1 * -1];
 			camText.addShader(fish);
 			fish.data.MAX_POWER.value = [0.19];
 	}
