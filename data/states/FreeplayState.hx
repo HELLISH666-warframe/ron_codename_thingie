@@ -1,3 +1,4 @@
+//𝔽𝕣𝕒𝕜𝕚𝕥𝕤 made nearly all of this , i added sheders and thats it lol
 //import
  import flixel.util.FlxColor;
  import flixel.text.FlxText;

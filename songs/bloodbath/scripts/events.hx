@@ -2,6 +2,8 @@ import openfl.system.Capabilities;
 
 var black:FlxSprite;
 var blackCam:FlxCamera;
+var strumLineNotes:FlxTypedGroup<StrumNote>;
+
 
 var bar1:FlxSprite = new FlxSprite(0,0).makeSolid(200, FlxG.height, FlxColor.BLACK);
 var bar2:FlxSprite = new FlxSprite(FlxG.width - 200,0).makeSolid(200, FlxG.height, FlxColor.BLACK);
@@ -9,12 +11,6 @@ var bar2:FlxSprite = new FlxSprite(FlxG.width - 200,0).makeSolid(200, FlxG.heigh
 var tiltCam:Bool = true;
 
 function postCreate(){
-	scanlines = new FlxSprite().loadGraphic(Paths.image('stages/nothing/scanlines'));
-	scanlines.scale.set(2, 2);
-	scanlines.screenCenter();
-	scanlines.scrollFactor.set(0.8, 0.8);
-	insert(members.indexOf(stage.getSprite("scanlines")), scanlines);
-	scanlines.visible = false;
 
 	FlxG.cameras.add(blackCam = new FlxCamera(), false);
     blackCam.bgColor = 0x00000000;
@@ -46,10 +42,21 @@ function update(elapsed){
 	if (!tiltCam) camHUD.angle = lerp(camHUD.angle, 0, 0.05);
 }
 
+function stepHit(curStep)	{if (curStep == 258)
+	
+		for (i in 0...4)
+		{
+			FlxTween.tween(strumLineNotes.members[i], {x: strumLineNotes.members[i].x + 1250, angle: strumLineNotes.members[i].angle + 359}, 1, {ease: FlxEase.linear, onComplete: function(w:FlxTween)
+				setDefault(i)});
+		}
+		for (i in 4...8)
+		{
+			FlxTween.tween(strumLineNotes.members[i], {x: strumLineNotes.members[i].x - 275, angle: strumLineNotes.members[i].angle}, 1, {
+				ease: FlxEase.linear,
+				onComplete: function(w:FlxTween) setDefault(i)
+			});
+		}}
 function beatHit(curBeat){
-	if(tiltCam){
-		if (curBeat % 2 == 0) camHUD.angle = 1 else camHUD.angle = -1;
-	}
 	switch(curBeat){
 		case 0:
 			camGame.zoom += 0.5;

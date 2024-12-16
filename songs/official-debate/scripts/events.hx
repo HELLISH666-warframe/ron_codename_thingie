@@ -12,7 +12,7 @@ function beatHit(curBeat) {
 	switch(curBeat) {
 	    case 0:
 			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x + 1200}, (Conductor.crochet/1000), {ease:FlxEase.circOut});
-		case 125:
+		case 173:
 			dad.color = 0xFF000000;
 			boyfriend.color = 0xFF000000;
 			stage.getSprite("bg").color = 0x7F9719;

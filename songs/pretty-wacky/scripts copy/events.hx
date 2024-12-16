@@ -1,6 +1,7 @@
 import openfl.system.Capabilities;
 import flixel.effects.particles.FlxParticle;
 import flixel.effects.particles.FlxTypedEmitter;
+import gameassets.Note;
 
 var black:FlxSprite;
 var blackCam:FlxCamera;
@@ -8,8 +9,9 @@ var blackCam:FlxCamera;
 var bar1:FlxSprite = new FlxSprite(0,0).makeSolid(200, FlxG.height, FlxColor.BLACK);
 var bar2:FlxSprite = new FlxSprite(FlxG.width - 200,0).makeSolid(200, FlxG.height, FlxColor.BLACK);
 
-
+var bloom:CustomShader = new CustomShader("mosaic");
 var tiltCam:Bool = true;
+
 
 function postCreate(){
 
@@ -71,8 +73,6 @@ function beatHit(curBeat){
 		add(snowemitter);
 		snowemitter.start(false, 0.05);
 		case 220:
-var bruh:FlxSprite = new FlxSprite();
-					bruh.loadGraphic(Paths.image('bgs/nothing/scanlines'));
 			FlxTween.tween(bar1, {x: 1080}, Conductor.crochet/650, {ease:FlxEase.circIn, onComplete: function(){
 				add(bar1);
 			}});
@@ -82,7 +82,9 @@ var bruh:FlxSprite = new FlxSprite();
 
 			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x + -100}, (Conductor.crochet/1000), {ease:FlxEase.circIn});
 			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x + 100}, (Conductor.crochet/1000), {ease:FlxEase.circIn});
+					camGame.addShader(bloom);
 			case 369:
+			camGame.removeShader(bloom);
 			FlxTween.tween(bar1, {x: -200}, Conductor.crochet/850, {ease:FlxEase.circOut, onComplete: function(){
 				remove(bar1);
 			}});

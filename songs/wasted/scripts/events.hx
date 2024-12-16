@@ -93,10 +93,15 @@ function beatHit(curBeat) {
 			case 552:
 		camGame.removeShader(ray);
 			case 599:
+				FlxTween.tween(dad, {angle: 0}, 0.2, {ease: FlxEase.linear});
+				FlxTween.tween(boyfriend, {angle: 0}, 0.2, {ease: FlxEase.linear});
+				FlxTween.tween(gf, {angle: 0}, 0.2, {ease: FlxEase.linear});
 				FlxG.camera.addShader(wig);
 				camHUD.addShader(wig);
 				wig.data.iTime.value = [2,2];
 				wig.data.on.value = [1.];
+				FlxG.camera.addShader(crt);
+				camHUD.addShader(crt);
 				FlxG.camera.addShader(chrom);
 				camHUD.addShader(chrom);
 				chrom.data.rOffset.value = [1/2];
@@ -104,3 +109,15 @@ function beatHit(curBeat) {
 				chrom.data.bOffset.value = [1 * -1];
 	}
 }
+function stepHit(step)
+	if ((curStep >= 1783) && (curStep < 2226))
+	{
+		boyfriend.y += Math.sin(curStep/6)/2;
+		dad.y -= Math.sin(curStep/6)/2;
+		gf.y += Math.sin(curStep/4)/2;
+		gf.angle += 1;
+		boyfriend.angle += 1;
+		dad.angle += 1;
+		boyfriend.angle += Math.sin(curStep/8)/6;
+		dad.angle -= Math.sin(curStep/8)/6;
+	}
