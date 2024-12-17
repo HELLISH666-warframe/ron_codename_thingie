@@ -2,7 +2,5 @@
 	"displayName": "Bijuu",
 	"bpm": 186.0,
 	"icon": "bijuuron",
-	"color": "#F6B604",
-	"coopAllowed": true,
-	"opponentModeAllowed": true
+	"color": "#F6B604"
 }

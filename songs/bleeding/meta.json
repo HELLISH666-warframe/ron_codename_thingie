@@ -2,7 +2,5 @@
 	"displayName": "Bleeding",
 	"bpm": 200.0,
 	"icon": "dripron",
-	"color": "#000000",
-	"coopAllowed": true,
-	"opponentModeAllowed": true
+	"color": "#000000"
 }

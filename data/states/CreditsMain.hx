@@ -25,14 +25,14 @@ var iconYArray:Array<Float> = []; //intro stuff
 function create() 
 {
 	Framerate.instance.visible = false;
-	DiscordUtil.changePresence('Scrolling Through Menus...', "Credits");
+	DiscordUtil.changePresence("Looking at Credits", null);
 
 
 	var data:Xml = Xml.parse(Assets.getText(Paths.file("data/config/credits.xml"))).firstElement();
     for (member_data in data.elementsNamed("member")) {
         credits.push({
             name: member_data.get("name"),
-            description: member_data.get("desc_" +  "en"),
+            description: member_data.get("desc"),
             social_link: member_data.get("social_link"),
         });
     }
@@ -70,23 +70,21 @@ function create()
 
 	FlxG.camera.follow(camFollowPos, null, 2);
 
-	descText = new FlxText(32, 100, FlxG.width, "", 19, true);
-	descText.setFormat("fonts/vcr.otf", 30, FlxColor.WHITE, "center");
+	descText = new FlxText(780-49, 425, 490, 20);
+	descText.setFormat("fonts/w95.otf", 30, FlxColor.WHITE, "center");
 	descText.scrollFactor.set();
+	descText.screenCenter();
 	add(descText);
 
 	descTextName = new FlxText(32, 620, FlxG.width, "", 19, true);
-	descTextName.setFormat("fonts/vcr.otf", 50, FlxColor.WHITE, "center");
+	descTextName.setFormat("fonts/w95.otf", 50, FlxColor.WHITE, "center");
 	descTextName.scrollFactor.set();
 	add(descTextName);
 
-	descText2 = new FlxText(32, descTextName.y + 50, FlxG.width, "", 19, true);
+	descText2 = new FlxText(780-49, 425, 490, 20);
+	descText2.screenCenter();
 	descText2.scrollFactor.set();
 	add(descText2);
-
-	var vigentte:FlxSprite = new FlxSprite().loadGraphic(Paths.image("menus/black_vignette"));
-	vigentte.alpha = 0.4; vigentte.scrollFactor.set(0,0);
-	add(vigentte);
 
 	for (i in 0...iconGroup.length){
 		FlxTween.tween(iconGroup.members[i], {y: iconYArray[i]}, 0.7,{ease: FlxEase.cubeOut, startDelay: 0.04 * i, onComplete: (tmr:FlxTween) -> {
@@ -104,14 +102,10 @@ function update(elapsed:Float) {
 	camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x+camFollowXOffset, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
 
 	if (!quitting) {
-		if (controls.LEFT_P)
-			changeSelection(-1);
-		if (controls.RIGHT_P)
-			changeSelection(1);
 		if (controls.UP_P)
-			changeSelection(-3);
+			changeSelection(-1);
 		if (controls.DOWN_P)
-			changeSelection(3);
+			changeSelection(1);
 
 		if (controls.ACCEPT)
 			CoolUtil.openURL(credits[curSelected].social_link);
@@ -144,11 +138,11 @@ function changeSelection(change:Int)
 	descText.text = member.role;
 	descText2.text = member.description;
 	if(descText2.text.length > 55){
-		descText2.setFormat("fonts/vcr.otf", 20, 0xF2C0AC, "center");
+		descText2.setFormat("fonts/w95.otf", 20, 0xFFFFFF, "center");
 		descText2.y = descTextName.y + -95;
 	}
 	else{
-		descText2.setFormat("fonts/vcr.otf", 50, 0xF2C0AC, "center");
+		descText2.setFormat("fonts/w95.otf", 50, 0xFFFFFF, "center");
 		descText2.y = descTextName.y + -90;
         descText2.x = descTextName.x + 190;
 	}

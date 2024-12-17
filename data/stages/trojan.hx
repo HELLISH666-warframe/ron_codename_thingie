@@ -5,12 +5,12 @@ function postCreate() {
 	atelo_popup_animated.visible = false;
 	error.visible = false;
 }
-function beatHit(beat)
+function stepHit(step)
         {
-            switch (beat)
+            switch (step)
             {
                 //stage 2
-                case 234:
+                case 384:
                     sky.visible = false;
                     mountainsback.visible = false;
                     mountains.visible = false;

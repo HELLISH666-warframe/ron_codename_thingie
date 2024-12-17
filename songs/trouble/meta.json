@@ -2,7 +2,5 @@
     "displayName": "trouble",
     "bpm": 250.0,
     "icon": "ron-classic",
-    "color": "#9271FD",
-    "coopAllowed": true,
-    "opponentModeAllowed": true
+    "color": "#9271FD"
 }

@@ -28,7 +28,19 @@ var particles:FlxTypedEmitter;
 var intendedColor:Int;
 override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
-	chrom.data.bOffset.value = [-0.005*Math.sin(time)];}
+	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
+	lerpScore = Math.floor(lerp(lerpScore, intendedScore, 0.4));
+
+	if (Math.abs(lerpScore - intendedScore) <= 10)
+		lerpScore = intendedScore;
+
+	scoreText.text = "PERSONAL BEST:" + lerpScore;
+	scoreBG.scale.set(Math.max(diffText.width, scoreText.width));
+	scoreBG.x = FlxG.width - scoreBG.width;
+
+	scoreText.x = coopText.x = scoreBG.x + 4;
+	diffText.x = Std.int(scoreBG.x + ((scoreBG.width - diffText.width) / 2));}
+
 function postCreate() {
 	FlxG.cameras.add(camText, false);
 	grpSongs.camera = camText;
@@ -43,6 +55,19 @@ function postCreate() {
 	portrait.scale.set(0.51,0.51);
 	portrait.updateHitbox();
 	add(portrait);
+
+	scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
+	scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, "RIGHT");
+
+	scoreBG = new FlxSprite(scoreText.x - 6, 0).makeGraphic(1, 1, 0xFF000000);
+	scoreBG.alpha = 0.3;
+	add(scoreBG);
+
+	diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
+	diffText.font = scoreText.font;
+	add(diffText);
+
+	add(scoreText);
 	
 	var bar:FlxSprite = CoolUtil.loadAnimatedGraphic(new FlxSprite(), Paths.image('menus/freeplay/bar'));
 	add(bar);
@@ -107,4 +132,13 @@ function onChangeSelection(event) {
 		portrait.angle = -5;
 		FlxTween.tween(portrait, {y: mfwY, angle: 0}, 0.4, {ease: FlxEase.elasticOut});
 	}});
+}
+function updateScore() {
+	if (songs[curSelected].difficulties.length <= 0) {
+		intendedScore = 0;
+		return;
+	}
+	var changes:Array<HighscoreChange> = [];
+	var saveData = FunkinSave.getSongHighscore(songs[curSelected].name, songs[curSelected].difficulties[curDifficulty], changes);
+	intendedScore = saveData.score;
 }

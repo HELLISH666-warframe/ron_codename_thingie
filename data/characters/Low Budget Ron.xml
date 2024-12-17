@@ -1,9 +1,0 @@
-<!DOCTYPE codename-engine-character>
-<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
-<character sprite="awesome-ron" icon="awesome-ron" color="#ffff00" x="-940" y="-330" antialiasing="false" camx="880" camy="520" scale="1.3">
-	<anim name="idle" anim="awesome-ron idle" x="-670.7692307692307" y="-432.3076923076923" fps="12" loop="true"/>
-	<anim name="singLEFT" anim="awesome-ron left" x="-650" y="-430.7692307692308" fps="8"/>
-	<anim name="singDOWN" anim="awesome-ron down" x="-715.3846153846154" y="-430.7692307692308" fps="12"/>
-	<anim name="singUP" anim="awesome-ron up" x="-672.3076923076923" y="-423.07692307692304" fps="12"/>
-	<anim name="singRIGHT" anim="awesome-ron right" x="-692.3076923076923" y="-426.9230769230769" fps="12"/>
-</character>

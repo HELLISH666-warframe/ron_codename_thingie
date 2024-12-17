@@ -2,7 +2,5 @@
 	"displayName": "ron-classic",
 	"bpm": 180.0,
 	"icon": "ron-classic",
-	"color": "#fbff0b",
-	"coopAllowed": true,
-	"opponentModeAllowed": true
+	"color": "#fbff0b"
 }

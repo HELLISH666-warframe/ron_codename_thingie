@@ -1,8 +1,6 @@
 {
 	"displayName": "ron",
-	"bpm": 170.0,
+	"bpm": 186.0,
 	"icon": "ron",
-	"color": "#fbff0b",
-	"coopAllowed": true,
-	"opponentModeAllowed": true
+	"color": "#fbff0b"
 }

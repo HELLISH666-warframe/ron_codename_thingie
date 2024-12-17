@@ -2,7 +2,5 @@
 	"displayName": "Recycle-Bin",
 	"bpm": 185.0,
 	"icon": "ron-usb",
-	"color": "#F6B604",
-	"coopAllowed": false,
-	"opponentModeAllowed": false
+	"color": "#F6B604"
 }

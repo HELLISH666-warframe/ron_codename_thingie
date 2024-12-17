@@ -2,7 +2,5 @@
 	"displayName": "oh-my-god-hes-ballin",
 	"bpm": 185.0,
 	"icon": "ballerorina",
-	"color": "#fa0000",
-	"coopAllowed": true,
-	"opponentModeAllowed": true
+	"color": "#fa0000"
 }

@@ -3,9 +3,6 @@ var noteName:FunkinText = new FunkinText(145, 687, 0, 'notes', 15, false);
 
 function create(){
     switch(PlayState.SONG.meta.displayName){
-        case 'Bijuu':{
-            noteName.text = 'RON_NOTES';
-        }
         case 'ron':{
             noteName.text = 'RON_NOTES';
         }
@@ -19,6 +16,9 @@ function create(){
             noteName.text = 'RON_NOTES';
         }
         case 'trojan-virus':{
+            noteName.text = 'RON_NOTES';
+        }
+        case 'Bijuu':{
             noteName.text = 'RON_NOTES';
         }
         case 'ron-classic':{

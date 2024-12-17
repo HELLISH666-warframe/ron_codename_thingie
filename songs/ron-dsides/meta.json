@@ -2,7 +2,5 @@
 	"displayName": "ron-dsides",
 	"bpm": 185.0,
 	"icon": "ron-dsides",
-	"color": "#8787ff",
-	"coopAllowed": true,
-	"opponentModeAllowed": true
+	"color": "#8787ff"
 }

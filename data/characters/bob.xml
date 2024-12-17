@@ -1,9 +1,0 @@
-<!DOCTYPE codename-engine-character>
-<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
-<character sprite="bob/characters/bob" icon="bob" color="#ffffff" x="70" y="350" camx="-90" camy="60" scale="1.2">
-	<anim name="idle" anim="idle" x="0" y="0.8333333333333334"/>
-	<anim name="singLEFT" anim="left" x="8.333333333333334" y="0.8333333333333334"/>
-	<anim name="singDOWN" anim="down" x="0.8333333333333334" y="-25.833333333333336"/>
-	<anim name="singUP" anim="up" x="2.5" y="10"/>
-	<anim name="singRIGHT" anim="right"/>
-</character>

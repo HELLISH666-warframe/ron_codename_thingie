@@ -2,7 +2,5 @@
 	"displayName": "Bleeding-classic",
 	"bpm": 200.0,
 	"icon": "hellron-classic",
-	"color": "#000000",
-	"coopAllowed": true,
-	"opponentModeAllowed": true
+	"color": "#000000"
 }

@@ -1,8 +1,6 @@
 {
 	"displayName": "official-debate",
-	"bpm": 185.0,
+	"bpm": 195.0,
 	"icon": "obama",
-	"color": "#F6B604",
-	"coopAllowed": true,
-	"opponentModeAllowed": true
+	"color": "#F6B604"
 }
