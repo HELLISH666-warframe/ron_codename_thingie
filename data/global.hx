@@ -10,9 +10,10 @@ import lime.graphics.Image;
 import Type;
 function update() {
     FlxG.autoPause = false;
-    Main.framerateSprite.codenameBuildField.text = "REAL Memory Counter: " + 0 + "GB\nThe REAL FL Studio 21.1.1.3750";
+    Main.framerateSprite.codenameBuildField.text = "REAL Memory Counter: " + 193759 + "TB\nThe REAL FL Studio 21.1.1.3750";
 }
-WindowUtils.winTitle = "versus literly every fanmod ever";
+WindowUtils.winTitle = "versus literly every fanmade mod ever";
+window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('icon'))));
 var redirectStates:Map<FlxState, String> = [
     MainMenuState => "DesktopState", 
 ];

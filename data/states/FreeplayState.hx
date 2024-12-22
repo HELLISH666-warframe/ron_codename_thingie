@@ -25,21 +25,9 @@
 var portrait:FlxSprite;
 var preload = [];
 var particles:FlxTypedEmitter;
-var intendedColor:Int;
 override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
-	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
-	lerpScore = Math.floor(lerp(lerpScore, intendedScore, 0.4));
-
-	if (Math.abs(lerpScore - intendedScore) <= 10)
-		lerpScore = intendedScore;
-
-	scoreText.text = "PERSONAL BEST:" + lerpScore;
-	scoreBG.scale.set(Math.max(diffText.width, scoreText.width));
-	scoreBG.x = FlxG.width - scoreBG.width;
-
-	scoreText.x = coopText.x = scoreBG.x + 4;
-	diffText.x = Std.int(scoreBG.x + ((scoreBG.width - diffText.width) / 2));}
+	chrom.data.bOffset.value = [-0.005*Math.sin(time)];}
 
 function postCreate() {
 	FlxG.cameras.add(camText, false);
@@ -132,13 +120,4 @@ function onChangeSelection(event) {
 		portrait.angle = -5;
 		FlxTween.tween(portrait, {y: mfwY, angle: 0}, 0.4, {ease: FlxEase.elasticOut});
 	}});
-}
-function updateScore() {
-	if (songs[curSelected].difficulties.length <= 0) {
-		intendedScore = 0;
-		return;
-	}
-	var changes:Array<HighscoreChange> = [];
-	var saveData = FunkinSave.getSongHighscore(songs[curSelected].name, songs[curSelected].difficulties[curDifficulty], changes);
-	intendedScore = saveData.score;
 }

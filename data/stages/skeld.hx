@@ -4,11 +4,11 @@ function postCreate() {
 	background.visible = true;
 }
 function stepHit(step)
-        {
-            switch (step)
-            {
-                case 267:
-                    background.visible = false;
-                    darkbackground.visible = true;
-            }
-        }
+{
+    switch (step)
+    {
+        case 256:
+            background.visible = false;
+            darkbackground.visible = true;
+    }
+}

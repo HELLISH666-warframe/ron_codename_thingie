@@ -127,4 +127,13 @@ function stepHit(step)
 		dad.angle -= Math.sin(curStep/8)/6;
 		}
 	}
+	switch(curStep) 
+	{
+		case 1757:
+		camGame.visible = false;
+		camHUD.visible = false;
+		case 1783:
+		camGame.visible = true;
+		camHUD.visible = true;
+	}
 }

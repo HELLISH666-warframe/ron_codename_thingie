@@ -11,17 +11,17 @@ override function update(elapsed:Float){time += elapsed;
 	wig.data.iTime.value = [0.005*Math.sin(time)];
 }
 
-function beatHit(curBeat){
+function stepHit(curStep){
 {
 
-	switch(curBeat){
-		case 67:
+	switch(curStep){
+		case 256:
 			FlxG.camera.addShader(vhs);
 			camHUD.addShader(vhs);
 			vhs.data.rOffset.value = [1/2];
 			vhs.data.gOffset.value = [0.0];
 			vhs.data.bOffset.value = [1 * -1];
-		case 68:
+		case 257:
 			FlxG.camera.addShader(wig);
 			camHUD.addShader(wig);
 			wig.data.iTime.value = [2,2];

@@ -4,5 +4,4 @@
 	<dad />
 	<boyfriend />	
 	<sprite name="trans"    x="-500"   y="-430" scale="1"   sprite="ss_gradient" scroll="1" />
-	<sprite name="scanlines" x="-400" y="-400" sprite="scanlines" scale="3" scroll="1"/>
 </stage>
